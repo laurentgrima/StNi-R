@@ -2,9 +2,6 @@
 # En cours de développement (version 10/08/2020), à utiliser avec précaution !
 # Par Laurent Grima (grima.laurent@yahoo.com), pour le Groupe d'études des invertébrés Armoricains (GRETIA)
 
-# install.packages("tidyverse")
-# install.packages("openxlsx")
-
 library("tidyverse")
 library("openxlsx") # permet de créer le fichier Excel
 
@@ -14,15 +11,15 @@ STN_habitats_especes <- read_delim("", ";", escape_double = FALSE, trim_ws = TRU
 STN_especes_pheno <- read_delim("", ";", escape_double = FALSE, trim_ws = TRUE)
 
 # Données liées au site (voir note pour le format)
-data_site_habitats <- read_delim("C:/Users/Laurent/Desktop/Syrph the Net on R/Fichier/StN/GLOMEL/Glomel (union)/ETUDE_Glomel_habitats.csv", ";", escape_double = FALSE, trim_ws = TRUE)
-data_filtre_geographique <- read_delim("C:/Users/Laurent/Desktop/Syrph the Net on R/Fichier/StN/GLOMEL/ETUDE_filtre_bretagne.csv", ";", escape_double = FALSE, trim_ws = TRUE)
-data_site_espece <- read_delim("C:/Users/Laurent/Desktop/Syrph the Net on R/Fichier/StN/GLOMEL/Glomel (union)/ETUDE_Glomel_especes.csv", ";", escape_double = FALSE, trim_ws = TRUE)
+data_site_habitats <- read_delim(".../ETUDE_habitats.csv", ";", escape_double = FALSE, trim_ws = TRUE)
+data_filtre_geographique <- read_delim(".../ETUDE_filtre_geo.csv", ";", escape_double = FALSE, trim_ws = TRUE)
+data_site_espece <- read_delim(".../ETUDE_especes.csv", ";", escape_double = FALSE, trim_ws = TRUE)
 
 # filtre par secteur
 # data_site_espece<- data_site_espece %>% 
 #   filter(lieu == "") 
 
-setwd("C:/Users/Laurent/Desktop/Syrph the Net on R/Fichier/StN/results") # Choix du répertoire où sera crée le classeur
+setwd("...") # Choix du répertoire où sera crée le classeur
 
 # Création et mise en forme du classeur Excel
 classeur_excel <- createWorkbook()
